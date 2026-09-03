@@ -1,0 +1,513 @@
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554,
+            #1e3a5f
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 480px;
+
+}
+
+
+.card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    border-radius: 28px;
+
+    padding:
+        40px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.3);
+
+    animation:
+        aparecer 0.6s ease;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+.emoji {
+
+    font-size: 58px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.small-title {
+
+    display: block;
+
+    color: #1e3a5f;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+}
+
+
+h1 {
+
+    color: #172554;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+
+p {
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+.pergunta {
+
+    color: #333;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+.botoes {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 65px;
+
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding:
+        14px 20px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.aceitar {
+
+    background: #1e3a5f;
+
+    color: white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(30, 58, 95, 0.35);
+
+}
+
+
+.aceitar:hover {
+
+    background: #172554;
+
+}
+
+
+.pensar {
+
+    background: #e8edf3;
+
+    color: #172554;
+
+}
+
+
+/* ========================= */
+/* MENSAGEM */
+/* ========================= */
+
+.mensagem {
+
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    color: #1e3a5f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================= */
+/* SUCESSO */
+/* ========================= */
+
+.sucesso-emoji {
+
+    animation:
+        pular 0.8s ease,
+        pulsar 1.5s ease-in-out
+        infinite 1s;
+
+}
+
+
+.coracao-grande {
+
+    font-size: 55px;
+
+    margin-top: 20px;
+
+    animation:
+        pulsar 1.3s ease-in-out
+        infinite;
+
+}
+
+
+.final {
+
+    margin-top: 20px;
+
+    color: #1e3a5f;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================= */
+/* CORAÇÕES */
+/* ========================= */
+
+.coracao {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    font-size: 25px;
+
+    animation:
+        subir linear forwards;
+
+}
+
+
+.brilho {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    font-size: 22px;
+
+    animation:
+        brilho 1.2s ease forwards;
+
+}
+
+
+/* ========================= */
+/* ANIMAÇÕES */
+/* ========================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes pular {
+
+    0% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    40% {
+
+        transform:
+            translateY(-25px)
+            rotate(-8deg);
+
+    }
+
+    70% {
+
+        transform:
+            translateY(5px)
+            rotate(8deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+
+    }
+
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-600px)
+            scale(1.4);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes brilho {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.2);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.4);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.2);
+
+    }
+
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+
+    .card {
+
+        padding:
+            35px 20px;
+
+        border-radius: 24px;
+
+    }
+
+
+    h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .pergunta {
+
+        font-size: 19px;
+
+    }
+
+
+    .botoes {
+
+        gap: 8px;
+
+    }
+
+
+    button {
+
+        padding:
+            13px 15px;
+
+        font-size: 14px;
+
+    }
+
+}
